@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "winforensicpy"
+version = "0.1.0"
+description = "Windows forensic artifact collection tool"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pywin32",
+    "psutil"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
