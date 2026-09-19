@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "WinForensicPy: A Modular Python Framework for Windows Forensic Artifact Collection and Evidence Integrity Verification"
+message: "If you use WinForensicPy in your research, please cite this software."
+type: software
+authors:
+  - family-names: "Hariyani"
+    given-names: "Amit"
+    orcid: "https://orcid.org/0000-0003-1662-9412"
+repository-code: "https://github.com/AmitHariyani/WinForensicPy"
+license: "MIT"
+version: "0.1.0"
+date-released: "2026-09-19"
+keywords:
+  - digital forensics
+  - Windows forensics
+  - forensic artifact collection
+  - Python
+  - evidence integrity
+  - cybersecurity
+abstract: "WinForensicPy is an open-source Python-based framework for collecting selected Windows forensic artifacts and preserving them in a structured format. The software provides modular collectors for system information, running processes, network connections, USB storage devices, Registry Run Keys, Windows Security and PowerShell event logs, Sysmon events, and Chrome history. Collected artifacts are stored in structured JSON files and accompanied by metadata and SHA-256 integrity information. WinForensicPy provides command-line and graphical interfaces and is designed to support repeatable artifact collection in authorized digital-forensics, incident-response, cybersecurity research, and educational environments."

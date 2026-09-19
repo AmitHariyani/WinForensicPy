@@ -1,96 +1,57 @@
-\# WinForensicPy
+# WinForensicPy
 
+WinForensicPy is an open-source, modular Python-based framework for collecting selected Windows forensic artifacts and preserving them in a structured format. The software is designed for authorized digital-forensics, incident-response, cybersecurity research, education, and defensive investigations.
 
+## Features
 
-WinForensicPy is a Python-based Windows forensic artifact collection tool designed to collect, organize, and preserve selected Windows forensic artifacts in a structured format.
+WinForensicPy currently provides collectors for:
 
+- Windows system information
+- Running processes
+- Network connections
+- USB storage devices
+- Windows Registry Run Keys
+- Windows Security Event Logs
+- PowerShell Event Logs
+- Sysmon Event Logs
+- Chrome browser history
 
+The software also provides:
 
-\## Features
+- Structured JSON evidence output
+- Evidence metadata generation
+- SHA-256 integrity hashing
+- Command-line interface (CLI)
+- Graphical user interface (GUI)
+- Modular collector architecture
+- Extensible output and evidence-management components
 
-
-
-\- Windows system information collection
-
-\- Running process collection
-
-\- Network information collection
-
-\- USB device information collection
-
-\- Windows Registry artifact collection
-
-\- Security event log collection
-
-\- PowerShell event collection
-
-\- Sysmon event collection
-
-\- Chrome history collection
-
-\- Evidence metadata generation
-
-\- SHA-256 integrity hashing
-
-\- JSON-based evidence output
-
-\- Command-line interface
-
-\- Graphical user interface
-
-
-
-\## Architecture
-
-
+## Architecture
 
 WinForensicPy follows a modular collector-based architecture.
 
-
-
 ```text
-
 WinForensicPy
-
 │
-
 ├── Collectors
-
 │   ├── System Information
-
-│   ├── Processes
-
-│   ├── Network
-
-│   ├── USB
-
-│   ├── Registry
-
-│   ├── Security Events
-
-│   ├── PowerShell Events
-
-│   ├── Sysmon Events
-
+│   ├── Running Processes
+│   ├── Network Connections
+│   ├── USB Storage Devices
+│   ├── Registry Run Keys
+│   ├── Security Event Logs
+│   ├── PowerShell Event Logs
+│   ├── Sysmon Event Logs
 │   └── Chrome History
-
 │
-
+├── Collector Runner
+│
 ├── Evidence Output
-
 │   ├── JSON Writer
-
 │   ├── Metadata Writer
-
 │   ├── Evidence Manager
-
 │   └── Evidence Viewer
-
 │
-
 └── Integrity Utilities
-
-&#x20;   ├── Hash Utilities
-
-&#x20;   └── Hash Writer
-
+    ├── Hash Utilities
+    └── Hash Writer
