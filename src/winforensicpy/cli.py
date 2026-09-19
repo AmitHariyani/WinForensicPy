@@ -24,7 +24,8 @@ def display_menu() -> None:
     print("6. Collect Network Connections")
     print("7. Collect Running Processes")
     print("8. Collect Chrome History")
-    print("9. Exit")
+    print("9. Collect Sysmon Event Logs")
+    print("10. Exit")
 
     print("=" * 60)
 
@@ -108,6 +109,15 @@ def run_cli() -> None:
 
             elif choice == "9":
 
+                result = runner.run_sysmon_events(
+                    max_records=100
+                )
+
+                print("\nSysmon Event Logs collected.")
+                print(result)
+
+            elif choice == "10":
+
                 print("\nExiting WinForensicPy.")
                 break
 
@@ -115,7 +125,7 @@ def run_cli() -> None:
 
                 print(
                     "\nInvalid choice. "
-                    "Please select an option from 1 to 9."
+                    "Please select an option from 1 to 10."
                 )
 
         except PermissionError as error:

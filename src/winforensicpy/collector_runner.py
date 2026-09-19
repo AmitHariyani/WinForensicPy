@@ -31,6 +31,9 @@ from winforensicpy.collectors.process_collector import (
 from winforensicpy.collectors.chrome_history_collector import (
     ChromeHistoryCollector,
 )
+from winforensicpy.collectors.sysmon_event_collector import (
+    SysmonEventCollector,
+)
 
 from winforensicpy.output.evidence_manager import (
     save_evidence,
@@ -198,6 +201,27 @@ class CollectorRunner:
             str(
                 self.output_directory
                 / "chrome_history.json"
+            ),
+            collector.get_name()
+        )
+
+    def run_sysmon_events(
+        self,
+        max_records: int = 100
+    ) -> dict:
+        """Collect Windows Sysmon Event Log records."""
+
+        collector = SysmonEventCollector()
+
+        data = collector.collect(
+            max_records
+        )
+
+        return save_evidence(
+            data,
+            str(
+                self.output_directory
+                / "sysmon_events.json"
             ),
             collector.get_name()
         )
